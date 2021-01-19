@@ -14,8 +14,16 @@
   "author": "yeonggil223@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "@types/react-redux": "^7.1.15",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/styled-components": "^5.1.7",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@types/react": "^16.8.24",
