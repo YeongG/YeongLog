@@ -14,10 +14,6 @@ module.exports = class User extends (
           type: Sequelize.STRING(10),
           allowNull: false,
         },
-        password: {
-          type: Sequelize.STRING(100),
-          allowNull: false,
-        },
         profileImg: {
           type: Sequelize.STRING(50),
           allowNull: false,
