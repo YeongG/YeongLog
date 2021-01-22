@@ -21,7 +21,7 @@ class EmailHandler {
       from: this.email,
       to: options.toEmail,
       subject: options.title,
-      text: options.content,
+      html: options.html,
     };
     return new Promise((resolve, reject) => {
       this.transporter.sendMail(mailOptions, function (err, info) {
