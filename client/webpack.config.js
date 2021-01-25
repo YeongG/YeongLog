@@ -22,6 +22,7 @@ module.exports = {
   output: {
     filename: "bundle.min.js",
     path: path.resolve(__dirname, "deploy"),
+    publicPath: "/",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -30,5 +31,6 @@ module.exports = {
   ],
   devServer: {
     host: "0.0.0.0",
+    historyApiFallback: true,
   },
 };
