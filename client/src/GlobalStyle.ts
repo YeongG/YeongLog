@@ -22,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
 export const GlobalDiv = styled.div`
   width: 1728px;
   margin: 0 auto;
+  color: rgb(33, 37, 41);
 
   @media (max-width: 1919px) {
     width: 1376px;
@@ -32,6 +33,16 @@ export const GlobalDiv = styled.div`
   }
 
   @media (max-width: 1056px) {
+    width: calc(100% - 2rem);
+  }
+`;
+
+export const GlobalCenterDiv = styled.div`
+  width: 768px;
+  margin: 0 auto;
+  color: rgb(33, 37, 41);
+
+  @media (max-width: 768px) {
     width: calc(100% - 2rem);
   }
 `;
