@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Header, LoginModal } from "./components";
 import { RegisterContainer } from "./containers";
 import { GlobalStyle } from "./GlobalStyle";
@@ -8,6 +10,7 @@ import { IndexPage } from "./pages";
 const App: FC<{}> = () => {
   return (
     <BrowserRouter>
+      <ToastContainer autoClose={2000} />
       <GlobalStyle />
       <Header />
       <Switch>
