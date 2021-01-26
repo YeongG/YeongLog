@@ -2,15 +2,17 @@ import React, { ChangeEvent, FC, useCallback, useState } from "react";
 import * as S from "./styles";
 
 interface Props {
-  value: string;
-  placeHolder: string;
-  label: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  name: string;
+  value?: string;
+  placeHolder?: string;
+  label?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  name?: string;
+  readOnly?: boolean;
 }
 
 const FormInput: FC<Props> = ({
   label,
+  readOnly,
   placeHolder,
   value,
   onChange,
@@ -31,6 +33,7 @@ const FormInput: FC<Props> = ({
         <h3>{label}</h3>
         <S.InputWrap>
           <input
+            readOnly={readOnly}
             name={name}
             placeholder={placeHolder}
             onFocus={onFocus}
