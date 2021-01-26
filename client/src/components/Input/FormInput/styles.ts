@@ -33,5 +33,6 @@ export const InputWrap = styled.div`
 
 export const WidthMaker = styled.div`
   font-size: 1.65rem;
+  white-space: nowrap;
   visibility: hidden;
 `;
