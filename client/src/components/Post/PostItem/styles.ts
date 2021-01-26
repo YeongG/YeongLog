@@ -10,7 +10,6 @@ export const Container = styled.div`
   transition: all 300ms;
   overflow: hidden;
   border-radius: 0.5rem;
-
   &:hover {
     transform: translateY(-10px);
   }
@@ -18,7 +17,6 @@ export const Container = styled.div`
 
 export const PostHeader = styled.div`
   height: 10rem;
-
   > img {
     width: 100%;
     height: 100%;
@@ -28,9 +26,6 @@ export const PostBody = styled.div`
   padding: 1rem;
   display: flex;
   flex-direction: column;
-
-  /* overflow: hidden; */
-  /* max-height: 1rem; */
 `;
 
 export const DateInfo = styled.div`
@@ -58,7 +53,6 @@ export const Introduce = styled.div`
   font-size: 0.9rem;
   flex: 1;
   height: 4rem;
-
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
