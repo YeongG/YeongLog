@@ -26,7 +26,9 @@ const RegisterPage: FC = () => {
   useEffect(() => {
     const token: string = (qs.parse(query.split("?")[1]).token as string) || "";
     if (!token) {
+      toast.dark("잘못된 접근 입니다");
       history.push("/");
+      return;
     }
     checkEmail(token)
       .then((res) => {
