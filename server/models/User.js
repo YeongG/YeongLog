@@ -7,11 +7,15 @@ module.exports = class User extends (
     return super.init(
       {
         email: {
-          type: Sequelize.STRING(20),
+          type: Sequelize.STRING(30),
           allowNull: false,
         },
         name: {
           type: Sequelize.STRING(10),
+          allowNull: false,
+        },
+        introduce: {
+          type: Sequelize.STRING(50),
           allowNull: false,
         },
         profileImg: {
