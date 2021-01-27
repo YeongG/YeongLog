@@ -3,7 +3,7 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Header, LoginModal } from "./components";
-import { RegisterContainer } from "./containers";
+import { LoginContainer, RegisterContainer } from "./containers";
 import { GlobalStyle } from "./GlobalStyle";
 import { IndexPage } from "./pages";
 
@@ -16,6 +16,7 @@ const App: FC<{}> = () => {
       <Switch>
         <Route exact path="/" component={IndexPage} />
         <Route exact path="/register" component={RegisterContainer} />
+        <Route exact path="/login" component={LoginContainer} />
         <Redirect to="/" />
       </Switch>
       <LoginModal />
