@@ -19,8 +19,18 @@ const makeEmailJWT = (data) => {
   });
 };
 
+const makeAccessJWT = (data) => {
+  return jwt.sign(data, process.env.JWT_KEY, {
+    expiresIn: "1d",
+  });
+};
+
 const decodeJwt = (token) => {
-  return jwt.verify(token, process.env.JWT_KEY);
+  try {
+    return jwt.verify(token, process.env.JWT_KEY);
+  } catch (err) {
+    throw new Error("Decode fail");
+  }
 };
 
 module.exports = {
@@ -28,4 +38,5 @@ module.exports = {
   hashPassword,
   decodeJwt,
   makeEmailJWT,
+  makeAccessJWT,
 };
