@@ -13,6 +13,10 @@ export const Container = styled.div`
   &:hover {
     transform: translateY(-10px);
   }
+
+  @media (max-width: 1056px) {
+    width: calc(50% - 2rem);
+  }
 `;
 
 export const PostHeader = styled.div`
@@ -38,7 +42,17 @@ export const ContentInfo = styled.div`
   text-decoration: none;
   flex: 1;
 `;
-export const PostInfo = styled.div``;
+export const PostInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+
+  > * {
+    display: flex;
+    align-items: center;
+  }
+`;
 
 export const Title = styled.div`
   font-weight: bolder;
@@ -58,4 +72,34 @@ export const Introduce = styled.div`
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+`;
+
+export const UserLInk = styled.a`
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  > span {
+    margin-left: 0.3rem;
+  }
+`;
+export const LikeWrap = styled.div`
+  svg {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+  span {
+    margin-left: 0.5rem;
+  }
+`;
+
+export const ByText = styled.span`
+  color: rgb(134, 142, 150);
+`;
+
+export const UserName = styled.span`
+  color: rgb(52, 58, 64);
+  font-weight: bold;
 `;
