@@ -1,11 +1,22 @@
-import React, { FC, useCallback } from "react";
-import { useDispatch } from "react-redux";
+import React, { FC, useCallback, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { User } from "../../lib/payloads/header";
+import { setUser } from "../../modules/actions/header";
 import { changeLoginModalState } from "../../modules/actions/loginModal";
+import { Store } from "../../modules/reducers";
 import * as S from "./styles";
 
 const Header: FC = () => {
   const dispatch = useDispatch();
+  const headerData = useSelector((store: Store) => store.header);
+
+  useEffect(() => {
+    const userDataStr: string = localStorage.getItem("USER_DATA");
+    if (!userDataStr) return;
+    const userData: User = JSON.parse(userDataStr) as User;
+    dispatch(setUser(userData));
+  }, []);
 
   const openModal = useCallback(() => {
     dispatch(changeLoginModalState(true));
@@ -36,7 +47,11 @@ const Header: FC = () => {
             ></path>
           </svg>
         </Link>
-        <S.LoginButton onClick={openModal}>로그인</S.LoginButton>
+        {headerData ? (
+          <S.LoginButton>새 글 작성</S.LoginButton>
+        ) : (
+          <S.LoginButton onClick={openModal}>로그인</S.LoginButton>
+        )}
       </S.HeaderRight>
     </S.Container>
   );
