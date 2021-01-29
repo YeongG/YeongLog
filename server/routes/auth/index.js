@@ -1,13 +1,11 @@
 const { Router } = require("express");
 const { User } = require("../../models");
-const {
-  hashPassword,
-  makeEmailJWT,
-  decodeJwt,
-  makeAccessJWT,
-} = require("../../lib/utils");
+const { makeEmailJWT, decodeJwt, makeAccessJWT } = require("../../lib/utils");
 const EmailHandler = require("../../lib/mail");
-const { checkBodyMiddleWare } = require("../../middleware");
+const {
+  checkBodyMiddleWare,
+  checkLoginMiddleWare,
+} = require("../../middleware");
 require("dotenv").config();
 
 const emailHandler = new EmailHandler(
@@ -17,15 +15,9 @@ const emailHandler = new EmailHandler(
 
 const authRouter = Router();
 
-authRouter.get("/check-email", (req, res) => {
-  const token = req.headers.authorization;
-  try {
-    const jwt = decodeJwt(token);
-    res.status(200).json({ message: "Token O", email: jwt.email });
-  } catch (err) {
-    res.status(409).json({ message: "Token X" });
-    return;
-  }
+authRouter.get("/check-email", checkLoginMiddleWare, (req, res) => {
+  const { email } = req.app.get("JWT_DATA");
+  res.status(200).json({ message: "Token O", email });
 });
 
 authRouter.post(
