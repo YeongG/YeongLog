@@ -17,6 +17,10 @@ export const Container = styled.div`
   @media (max-width: 1056px) {
     width: calc(50% - 2rem);
   }
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const PostHeader = styled.div`
