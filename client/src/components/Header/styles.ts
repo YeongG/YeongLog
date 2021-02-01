@@ -16,7 +16,7 @@ export const HeaderRight = styled.div`
     width: 1.3rem;
     height: 1.3rem;
   }
-  a {
+  > a {
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 50%;
@@ -45,5 +45,53 @@ export const LoginButton = styled.button`
 
   &:hover {
     background: rgb(134, 142, 150);
+  }
+`;
+
+export const LoginedContainer = styled.div`
+  margin-left: 1.25rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  > svg {
+    margin-left: 0.3rem;
+    opacity: 0.5;
+    transition: 125ms all;
+  }
+
+  &:hover > svg {
+    opacity: 1;
+  }
+`;
+
+export const ProfileImg = styled.img`
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+`;
+
+export const HideWrap = styled.div<{ isOpen: boolean }>`
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  position: absolute;
+  top: 100%;
+  margin-top: 1rem;
+  z-index: 1;
+  right: 0;
+  width: 12rem;
+  background: white;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+`;
+
+export const HideLine = styled.a`
+  display: block;
+  color: rgb(33, 37, 41);
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background: rgb(248, 249, 250);
   }
 `;
