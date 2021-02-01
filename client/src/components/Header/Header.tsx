@@ -5,6 +5,7 @@ import { User } from "../../lib/payloads/header";
 import { setUser } from "../../modules/actions/header";
 import { changeLoginModalState } from "../../modules/actions/loginModal";
 import { Store } from "../../modules/reducers";
+import LoginedProfile from "./LoginedProfile/LoginedProfile";
 import * as S from "./styles";
 
 const Header: FC = () => {
@@ -48,7 +49,10 @@ const Header: FC = () => {
           </svg>
         </Link>
         {headerData ? (
-          <S.LoginButton>새 글 작성</S.LoginButton>
+          <>
+            <S.LoginButton>새 글 작성</S.LoginButton>
+            <LoginedProfile />
+          </>
         ) : (
           <S.LoginButton onClick={openModal}>로그인</S.LoginButton>
         )}
