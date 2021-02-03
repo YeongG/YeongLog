@@ -3,7 +3,11 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Header, LoginModal } from "./components";
-import { LoginContainer, RegisterContainer } from "./containers";
+import {
+  LoginContainer,
+  RegisterContainer,
+  SettingContainer,
+} from "./containers";
 import { GlobalStyle } from "./GlobalStyle";
 import { getMyData } from "./lib/api/user";
 import { getJWT, logOut } from "./lib/reqeust";
@@ -30,6 +34,7 @@ const App: FC<{}> = () => {
         <Route exact path="/" component={IndexPage} />
         <Route exact path="/register" component={RegisterContainer} />
         <Route exact path="/login" component={LoginContainer} />
+        <Route exact path="/setting" component={SettingContainer} />
         <Redirect to="/" />
       </Switch>
       <LoginModal />
