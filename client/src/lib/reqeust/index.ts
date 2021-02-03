@@ -41,4 +41,5 @@ export const removeUserData = (): void => {
 export const logOut = () => {
   removeJWT();
   removeUserData();
+  window.location.reload();
 };
