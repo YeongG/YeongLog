@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { GlobalDiv } from "../../GlobalStyle";
 
@@ -85,11 +86,12 @@ export const HideWrap = styled.div<{ isOpen: boolean }>`
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 `;
 
-export const HideLine = styled.a`
+export const HideLine = styled(Link)`
   display: block;
   color: rgb(33, 37, 41);
   padding: 0.75rem 1rem;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     background: rgb(248, 249, 250);
