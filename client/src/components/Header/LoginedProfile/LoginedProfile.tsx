@@ -23,11 +23,13 @@ const LoginedProfile: FC = () => {
         <path d="M7 10l5 5 5-5z"></path>
       </svg>
       <S.HideWrap isOpen={hideMenuIsOpen}>
-        <S.HideLine>내 벨로그</S.HideLine>
-        <S.HideLine>임시 글</S.HideLine>
-        <S.HideLine>읽기 목록</S.HideLine>
-        <S.HideLine>설정</S.HideLine>
-        <S.HideLine onClick={logOut}>로그 아웃</S.HideLine>
+        <S.HideLine to="/">내 벨로그</S.HideLine>
+        <S.HideLine to="/">임시 글</S.HideLine>
+        <S.HideLine to="/">읽기 목록</S.HideLine>
+        <S.HideLine to="/setting">설정</S.HideLine>
+        <S.HideLine to="#" onClick={logOut}>
+          로그 아웃
+        </S.HideLine>
       </S.HideWrap>
     </S.LoginedContainer>
   );
