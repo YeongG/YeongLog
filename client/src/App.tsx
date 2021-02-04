@@ -14,17 +14,6 @@ import { getJWT, logOut } from "./lib/reqeust";
 import { IndexPage } from "./pages";
 
 const App: FC<{}> = () => {
-  useEffect(() => {
-    const token: string = getJWT();
-    if (!token) {
-      return;
-    }
-    getMyData().catch((err) => {
-      logOut();
-      window.location.reload();
-    });
-  }, []);
-
   return (
     <BrowserRouter>
       <ToastContainer autoClose={2000} />
