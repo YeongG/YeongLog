@@ -58,6 +58,7 @@ const datas = [
 const IndexPage: FC<{}> = () => {
   return (
     <GlobalDiv>
+      <S.GlobalStyle />
       <S.Container>
         {datas.map((data, i) => (
           <PostItem {...data} key={i} />

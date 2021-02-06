@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`    
+  body {
+    background-color:rgb(248, 249, 250);
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
