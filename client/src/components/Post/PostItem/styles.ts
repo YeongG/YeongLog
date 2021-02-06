@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const PostHeader = styled.div`
+  height: 10rem;
+  > img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 export const Container = styled.div`
   width: 20rem;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px;
@@ -20,16 +28,13 @@ export const Container = styled.div`
 
   @media (max-width: 767px) {
     width: 100%;
+    height: 30rem;
+    ${PostHeader} {
+      height: 15rem;
+    }
   }
 `;
 
-export const PostHeader = styled.div`
-  height: 10rem;
-  > img {
-    width: 100%;
-    height: 100%;
-  }
-`;
 export const PostBody = styled.div`
   padding: 1rem;
   display: flex;
