@@ -4,6 +4,11 @@ import { styledButton } from "../../lib/payloads/button";
 export const SettingHeaderWrap = styled.div`
   height: 13.75rem;
   display: flex;
+  margin-top: 3rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const UserImgWrap = styled.div`
@@ -11,6 +16,15 @@ export const UserImgWrap = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-right: 1.5rem;
+  border-right: 1px solid rgb(233, 236, 239);
+
+  @media (max-width: 768px) {
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    border-right: none;
+    border-bottom: 1px solid rgb(233, 236, 239);
+  }
 
   img {
     object-fit: cover;
@@ -38,5 +52,15 @@ export const ImgBtn = styled(styledButton)`
     &:hover {
       background-color: rgb(195, 250, 232);
     }
+  }
+`;
+
+export const UserTextWrap = styled.div`
+  padding-left: 1.5rem;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    padding-top: 1.5rem;
+    padding-left: 0;
   }
 `;

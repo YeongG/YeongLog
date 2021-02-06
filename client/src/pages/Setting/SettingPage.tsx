@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { EditInput } from "../../components";
 import { GlobalCenterDiv } from "../../GlobalStyle";
 import * as S from "./styles";
 
@@ -12,10 +13,16 @@ const SettingPage: FC = () => {
             이미지 업로드
           </S.ImgBtn>
           <S.ImgBtn background="white" color="rgb(18, 184, 134)">
-            이미지 업로드
+            이미지 제거
           </S.ImgBtn>
         </S.UserImgWrap>
-        <div>dd</div>
+        <S.UserTextWrap>
+          <EditInput
+            color="rgb(73, 80, 87)"
+            fontWeight="bold"
+            fontSize="1.5rem"
+          />
+        </S.UserTextWrap>
       </S.SettingHeaderWrap>
     </GlobalCenterDiv>
   );
