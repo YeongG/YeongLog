@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from "react";
+import React, { ChangeEvent, FC, useCallback, useState } from "react";
 import * as S from "./styles";
 
 export interface EditInputStyleOption {
@@ -9,6 +9,8 @@ export interface EditInputStyleOption {
 
 export interface EditInputOption extends EditInputStyleOption {
   value?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  name?: string;
 }
 
 const EditInput: FC<EditInputOption> = (props) => {
@@ -26,12 +28,16 @@ const EditInput: FC<EditInputOption> = (props) => {
     >
       {isEditMode ? (
         <>
-          <S.EditInput />
-          <S.SaveButton>저장</S.SaveButton>
+          <S.EditInput
+            name={props.name || undefined}
+            value={props.value}
+            onChange={props.onChange || undefined}
+          />
+          <S.SaveButton onClick={changeIsEditMode}>저장</S.SaveButton>
         </>
       ) : (
         <>
-          <S.ContentDiv>공영길</S.ContentDiv>
+          <S.ContentDiv>{props.value}</S.ContentDiv>
           <div className="link" onClick={changeIsEditMode}>
             수정
           </div>

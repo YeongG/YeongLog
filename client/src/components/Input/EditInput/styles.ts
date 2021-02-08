@@ -8,12 +8,16 @@ export const EditInput = styled.input`
   flex: 1;
   outline: none;
   border-radius: 4px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem !important;
+  }
 `;
 
 export const ContentDiv = styled.div``;
 
 export const Container = styled.div<EditInputStyleOption>`
-  width: 100%;
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,6 +26,10 @@ export const Container = styled.div<EditInputStyleOption>`
     font-size: ${(props) => props.fontSize || "normal"};
     font-weight: ${(props) => props.fontWeight || "normal"};
     color: ${(props) => props.color || "black"};
+  }
+
+  & + & {
+    margin-top: 0.5rem;
   }
 `;
 
