@@ -8,6 +8,7 @@ export const SettingHeaderWrap = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    height: auto;
   }
 `;
 
@@ -63,4 +64,8 @@ export const UserTextWrap = styled.div`
     padding-top: 1.5rem;
     padding-left: 0;
   }
+`;
+
+export const SettingBodyWrap = styled.div`
+  margin-top: 3rem;
 `;
