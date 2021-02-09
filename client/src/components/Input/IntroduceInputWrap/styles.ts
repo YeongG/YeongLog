@@ -1,12 +1,17 @@
 import styled from "styled-components";
+import { IntroduceInputWrapStyle } from "./IntroduceInputWrap";
 
-export const Container = styled.div``;
-export const NameWrap = styled.div`
+export const Container = styled.div`
+  & + & {
+    margin-top: 1.5rem;
+  }
+`;
+export const NameWrap = styled.div<IntroduceInputWrapStyle>`
   display: flex;
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: ${(props) => (props.mediaColumn ? "column" : "row")};
   }
 `;
 export const IntroduceWrap = styled.div`
