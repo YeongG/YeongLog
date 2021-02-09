@@ -73,6 +73,7 @@ const SettingPage: FC = () => {
         </S.SettingHeaderWrap>
         <S.SettingBodyWrap>
           <IntroduceInputWrap
+            mediaColumn={true}
             name="이메일"
             introduce="회원 인증 또는 시스템에서 발송하는 이메일을 수신하는 주소입니다."
           >
@@ -84,6 +85,14 @@ const SettingPage: FC = () => {
               onChange={inputHandler}
               fontSize="1rem"
             />
+          </IntroduceInputWrap>
+          <IntroduceInputWrap
+            name="회원탈퇴"
+            introduce="탈퇴 시 작성하신 포스트 및 댓글이 모두 삭제되며 복구되지 않습니다."
+          >
+            <S.DeleteUserWrap>
+              <button>회원 탈퇴</button>
+            </S.DeleteUserWrap>
           </IntroduceInputWrap>
         </S.SettingBodyWrap>
       </GlobalCenterDiv>

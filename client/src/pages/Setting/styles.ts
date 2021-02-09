@@ -69,3 +69,19 @@ export const UserTextWrap = styled.div`
 export const SettingBodyWrap = styled.div`
   margin-top: 3rem;
 `;
+
+export const DeleteUserWrap = styled.div`
+  flex: 1;
+
+  > button {
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: rgb(255, 107, 107);
+    font-size: 1rem;
+    color: white;
+  }
+`;
